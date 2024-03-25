@@ -19,3 +19,20 @@ function getRandomPosition() {
     var randomY = Math.floor(Math.random()*y);
     return [randomX,randomY];
   }
+
+//   const audio = document.getElementById("starWarsAudio");
+//   audio.play();
+// method not allow to start playing audio because it was not initiated by a user interaction. Most modern browser have auto paly policies in place to prevent websites from auto playing audio or video wih user interaction. This is done to improve user exerience and reduce unwanted noise. To resolve, need to ensure play() method is triggered by a user interaction i.e. click event
+
+document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.getElementById("starWarsAudio");
+
+    function playAudioOnClick() {
+        audio.play();
+        // Remove the event listener to prevent multiple plays
+        document.removeEventListener('click', playAudioOnClick);
+    }
+
+    // Add event listener to play audio when user clicks anywhere on the page
+    document.addEventListener('click', playAudioOnClick);
+});
