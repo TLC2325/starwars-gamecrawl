@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <section class="logo">
-            <img src="https://gist.githubusercontent.com/christopherkade/97fd94f20c3a4ffddfa5aba46261082f/raw/c4095f36fdf4cd35384a0a73bd9fbc538c31aac1/logo.svg" alt="starwar logo">
-        </section>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starwar Typing Game</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- <section class="start">
+        <p>
+            Start
+        </p>
+    </section> -->
+
+    <div class="start">
+        <button class="start-button">Start Game</button>
+    </div>
+
+    <audio id="starWarsAudio" preload="auto">
+        <source src="https://s.cdpn.io/1202/Star_Wars_original_opening_crawl_1977.ogg" type="audio/ogg" />
+        <source src="https://s.cdpn.io/1202/Star_Wars_original_opening_crawl_1977.mp3" type="audio/mpeg" />
+    </audio>
+
+    <section class="logo">
+        <img src="https://gist.githubusercontent.com/christopherkade/97fd94f20c3a4ffddfa5aba46261082f/raw/c4095f36fdf4cd35384a0a73bd9fbc538c31aac1/logo.svg"
+            alt="starwar logo">
+    </section>
+    <section class="intro">
+        A long time ago, in a galaxy far,<br> far away....
+    </section>
+
     <script src="./index.js"></script>
+</body>
+
 </html>
