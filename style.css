@@ -1,50 +1,27 @@
+/* Box-sizing to be border box, makes working with widths; paddings; margins easier. 
+
+   Box-sizing property allows you to include padding and border in an element's total width and height*/
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* 100VH represent 100% of the viewport's height, or the full height of the screen */
+
 @import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
 
 body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    font: 700 1em "News Cycle", sans-serif;
-    letter-spacing:.15em;
+    font: 700 2.2em "News Cycle", sans-serif;
+    letter-spacing:.20em;
     color: #ff6;
     background-color: black;
     display: flex;
     justify-content: center;
-    align-items: center;
-
-}
-
-/* .start {
-    font-size: 200%;
-    cursor: pointer;
-} */
-
-.start-button {
-    padding: 15px 30px;
-    font-size: 200%;
-    text-transform: uppercase;
-    border: 8px solid #feda4a;
-    border-radius: 5px;
-    background-color: #000;
-    color: #feda4a;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s ease;
-    /* color: #ff6; */
-}
-
-.start-button:hover {
-    background-color: #feda4a;
-    color: #000;
-}
-
-.logo, .intro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+    align-items: flex-end; 
+    min-height: 100vh;
+    margin: 0;
 }
 
 .star {
@@ -54,44 +31,9 @@ body {
     background-color: white;
 }
 
-.logo {
-    opacity: 0;
-    animation: logo 10s ease-out 10s;
-}
-
-@keyframes logo {
-    0% { 
-        transform: scale(2.15);
-        opacity: 1; 
-    }
-    50% { 
-      opacity: 1; 
-    }
-    100% { 
-        transform: scale(0);
-      opacity: 0; 
-    }
-  }
-
-.intro {
-    color: rgb(75, 213, 238);
-    font-weight: 400;
-    font-size: 150%;
-    opacity: 0;
-    animation: intro 6s ease-out 1s;
-}
-
-@keyframes intro {
-    0% {
-        opacity: 0;
-    }
-    20% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+/* Max-width 90% of screen sixe so it never expands too far past the edge */
+.container {
+    width: 700px;
+    padding: 1rem;
+    max-width: 90%;
 }
