@@ -21,42 +21,51 @@ function getRandomPosition() {
     return [randomX,randomY];
   }
 
+// ----------------------------------------
 
 // DOM manipulation
-const quoteToType = document.getElementById("quoteDisplay");
+document.getElementById('start-btn').addEventListener('click', startGame);
+const quoteToType = document.getElementById("quoteContainer");
 
 
-// Bug - random num could be '0' meaning when api fetch 0 returns '404', starting num must be 1
 function generateRandomNumber() {
-    return Math.floor(Math.random() * 6);
+    // Fixing the bug where 0 can cause a 404 error
+    return Math.floor(Math.random() * 6) + 1;
 }
 
 
 const randomNumber = generateRandomNumber();
-
-
 const starWarQuote = `https://www.swapi.tech/api/films/${randomNumber}`;
 // const starWarQuote = `https://www.swapi.tech/api/films/1`;
 
 const fetchApi = () => {
     return fetch(starWarQuote)
     .then(response => response.json())
-    .then(data => data)
+    // .then(data => data)
     // .then(data => console.log(data.result.properties.opening_crawl))
     .catch(error => console.log(error))
 };
 
 
-async function renderNewQuote() {
+async function startGame() {
     try {
+        document.getElementById('title').classList.add('hidden');
+        document.getElementById('sub-title').classList.add('hidden');
+        document.getElementById('start-btn').classList.add('hidden');
         const getQuote = await fetchApi();
         const newQuote = getQuote.result.properties.opening_crawl
         console.log(newQuote)
         quoteToType.innerText = newQuote;
-    } catch (error) {
+        quoteToType.classList.remove('hidden');
+        
+        // Hide title and start btn by adding 'hidden' class
+        
+        // Show quote container by removing 'hidden' class
+
+        // console logging to see array - delete once not needed
+        console.log(newQuote.split(''))
+    } catch(error) {
         console.error("Error message", error);
     }
 }
 
-
-renderNewQuote()
