@@ -5,21 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <script src="./script.js" defer></script>
-    <title>Starwar Typing Game</title>
+    
+    <title>Type Wars</title>
 </head>
 
 <body>
-    <!-- <section class="start">
-        <p>
-            Start
-        </p>
-    </section> -->
-
-    <!-- <div class="start">
-        <button class="start-btn">Start Game</button>
-    </div> -->
-
     <audio id="starWarsAudio" preload="auto">
         <source src="https://s.cdpn.io/1202/Star_Wars_original_opening_crawl_1977.ogg" type="audio/ogg" />
         <source src="https://s.cdpn.io/1202/Star_Wars_original_opening_crawl_1977.mp3" type="audio/mpeg" />
@@ -34,8 +24,15 @@
     </section> -->
 
     <div class="container">
-        <div class="quote-display" id="quoteDisplay">Text Challenge Here</div>
-        <textarea class="quote-input" id="quoteInput" autofocus>User input</textarea>
+        <h1 id="title">Type Wars</h1>
+        <p id="sub-title"> Practice your Galactic typing skills with a quote from StarWar</p>
+        <button type="button" id="start-btn">Start Game</button>
+        <!-- <div id="quote-container" class="hidden"> -->
+            <p class="hidden" id="quoteDisplay"></p><!-- This displays our quote -->
+            <!-- <p class="quote-input" id="quoteInput"></p>This displays status message -->
+        <div class="hidden" id="quoteContainer"></div>
+        
     </div>
+    <script src="./script.js" defer></script>
 </body>
 </html>
